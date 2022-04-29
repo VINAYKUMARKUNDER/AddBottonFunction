@@ -1,0 +1,17 @@
+.main{
+    margin: auto;
+    background-color: aliceblue;
+
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.main>div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+img{
+    width: 100%;
+}

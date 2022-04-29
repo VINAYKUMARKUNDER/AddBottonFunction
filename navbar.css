@@ -1,0 +1,22 @@
+
+#nav{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    padding: 8px;
+    background-color: rgba(2, 1, 4, 0.883);
+    border-radius: 20px;
+    margin-bottom: 3%;
+}
+#nav>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+h2{
+    color: white;
+}
