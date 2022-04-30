@@ -16,14 +16,16 @@
             <h2>Rebok</h2>
         </div>
         <div>
-            <h2><a href="Ecomerce.html">E-com</a></h2>
-            <h2>Woman's</h2>
+            <h2><a href="index.html">E-com</a></h2>
+            <h2><a href="women.html">Women's</a></h2>
             <h2><a href="card.html">Card</a></h2>
             <h2></h2>
         </div>
     </div>
     <div id="price-section">
-        <h2 id="totalPrice">i am total</h2>
+        <h2 id="totalPrice">I am Total Price</h2>
+        <button id="see">See Price</button>
+        <br>
         <input type="text" id="promo" placeholder="Enter Promocode">
         <input type="submit" id="applay" >
     </div>
@@ -46,7 +48,13 @@
             var div=document.createElement("div"); // div tag
 
             var img=document.createElement("img"); // img tag
-            img.setAttribute("src",el.image_url);
+            if(el.img=el.img){
+                img.setAttribute("src",el.img);
+            }else{
+                img.setAttribute("src",el.image_url);
+            }
+            
+           
 
             var h3=document.createElement("h5"); // name tag
             h3.innerText=el.name;
@@ -61,7 +69,7 @@
                 event.target.parentNode.remove();
             })
            
-         priceArr=priceArr+(el.price);
+         priceArr=priceArr+(+el.price);
 
          
             
@@ -71,6 +79,12 @@
             body.append(div);
         })
         
+        var see=document.getElementById("see");
+        see.addEventListener("click",seeFun);
+        function seeFun(){
+            var totalPrice=document.getElementById("totalPrice");
+            totalPrice.innerText="Total Price : " +priceArr;
+        }
 
         var appl=document.getElementById("applay");
         appl.addEventListener("click",applay);
@@ -83,11 +97,16 @@
          console.log(priceArr);
 
             if(count==1){
+                
                 if(promo=="MASAI30" || promo=="masai30"){
                     var discount=(priceArr*30)/100;
                     priceArr=priceArr-discount;
                     totalPrice.innerText="Total Price : " +priceArr;
-                }else{
+                }
+                else if(promo==""){
+                    alert("Plese Enter Promo code")
+                }
+                else{
                     totalPrice.innerText="Total Price : " +priceArr;
                 }
             }
