@@ -107,8 +107,11 @@
                 }
                 else if(promo==""){
                     alert("Plese Enter Promo code")
+                    count=0;
                 }
                 else{
+                    var discount=(priceArr*10)/100;
+                    priceArr=priceArr-discount;
                     totalPrice.innerText="Total Price : " +priceArr;
                 }
             }
