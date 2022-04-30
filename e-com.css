@@ -1,3 +1,6 @@
+body{
+    width: 99%;
+}
 .main{
     margin: auto;
     background-color: aliceblue;
@@ -11,6 +14,10 @@
 .main>div{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
+}
+
+.main>div>h5 ,.main>div>p{
+  text-align: center;
 }
 img{
     width: 100%;
@@ -26,3 +33,41 @@ img{
     color: black;
    
 }
+
+#instruction{
+    font-style: italic;
+    line-height: 20px;
+}
+#promo{
+    background-color: rgb(220, 245, 235);
+    width: 30%;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 23px;
+}
+
+    @media all and (min-width:451px) and (max-width:720px){
+        body{
+            width: 90%;
+        }
+
+        .main{
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+        }
+    }
+    @media all and (min-width:50px) and (max-width:450px){
+        body{
+            width: 90%;
+        }
+
+        .main{
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 5px;
+        }
+    }
